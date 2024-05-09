@@ -31,7 +31,7 @@ public class LoginPage {
         password.sendKeys(passw);
     }
 
-    @FindBy(xpath = "//p[.='Masuk ke Akun Anda']")
+    @FindBy(xpath = "//button[@id='sign_in_button_sign_in']")
     private WebElement btnLogin;
     public void clickBtnLogin(){
         btnLogin.click();
@@ -42,5 +42,11 @@ public class LoginPage {
 
     public boolean verHomePage(){
         return homePage.isDisplayed();
+    }
+    @FindBy(xpath = "//div[@class='MuiGrid-root MuiGrid-container NavigationMenu_Menu css-1d3bbye']")
+    private WebElement homePage2;
+
+    public boolean verHomePage2(){
+        return homePage2.isDisplayed();
     }
 }

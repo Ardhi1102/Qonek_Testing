@@ -25,11 +25,14 @@ public class LoginStep {
         loginPage.setUserId(userId);
         loginPage.setPassword(password);
         loginPage.clickBtnLogin();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertTrue(loginPage.verHomePage());
-        Thread.sleep(3000);
+        Thread.sleep(2000);
     }
 
+    @Then("User allready on HomePage")
+    public void userAllreadyOnHomePage() {
+        LoginPage loginPage = new LoginPage(webDriver);
+        Assert.assertTrue(loginPage.verHomePage2());
     }
-
 }
