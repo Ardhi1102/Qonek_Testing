@@ -55,4 +55,13 @@ public class EditBubbleChatStep {
         Thread.sleep(2000);
         editBubbleChatPage.setEditHotkey(hKey);
     }
+
+    @And("User edit Template Name with {string}")
+    public void userEditTemplateNameWith(String tName) throws InterruptedException {
+        EditBubbleChatPage editBubbleChatPage = new EditBubbleChatPage(webDriver);
+        Thread.sleep(2000);
+        editBubbleChatPage.setClearTemplateName();
+        Thread.sleep(2000);
+        editBubbleChatPage.setEditTemplateName(tName);
+    }
 }

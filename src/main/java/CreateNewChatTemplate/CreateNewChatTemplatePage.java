@@ -40,7 +40,12 @@ public class CreateNewChatTemplatePage {
     private WebElement chatText;
     public void setChatText(String cText){
         chatText.sendKeys(cText);
-        chatText.clear();
+    }
+//update 10052024
+    @FindBy(xpath = "//p[@class='text']")
+    private WebElement previewText;
+    public String setPreviewText(){
+        return previewText.getText();
     }
 
     @FindBy(xpath = "//button[@id='addnewtemplate_buble_btn_createtemplate']")
@@ -58,6 +63,11 @@ public class CreateNewChatTemplatePage {
     private WebElement otherChat;
     public void setOtherChat(String oChat){
         otherChat.sendKeys(oChat);
+    }
+    @FindBy(xpath = "//div[@class='ql-editor ql-blank']")
+    private WebElement clearOtherChat;
+    public void setClearOtherChat(){
+        clearOtherChat.clear();
     }
     @FindBy(xpath = "//img[@src='/assets/icons/paperclip-2.svg']")
     private WebElement iconUploadImageChat;

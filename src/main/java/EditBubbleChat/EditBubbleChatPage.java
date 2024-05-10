@@ -51,4 +51,14 @@ public class EditBubbleChatPage {
     public void clickEditTemplateButton(){
         editTemplateButton.click();
     }
+    @FindBy(xpath = "//input[@id='addnewtemplatechat_textinput_templatename']")
+    private WebElement clearTemplateName;
+    public void setClearTemplateName(){
+        clearTemplateName.clear();
+    }
+    @FindBy(xpath = "//input[@id='addnewtemplatechat_textinput_templatename']")
+    private WebElement editTemplateName;
+    public void setEditTemplateName(String tempName){
+        editTemplateName.sendKeys(tempName);
+    }
 }
