@@ -61,4 +61,15 @@ public class EditBubbleChatPage {
     public void setEditTemplateName(String tempName){
         editTemplateName.sendKeys(tempName);
     }
+    @FindBy(css = ".Toolbar > [xmlns='http://www.w3.org/2000/svg']")
+    private WebElement deleteBubbleChatButton;
+    public void clickDeleteBubbleChatButton(){
+        deleteBubbleChatButton.click();
+    }
+    @FindBy(xpath = "//div[@class='warningnull']")
+    private WebElement errorMessageBubbleChatNull;
+    public boolean verErrorMessageBubbleChatNull(){
+        return errorMessageBubbleChatNull.isDisplayed();
+    }
+
 }

@@ -3,7 +3,9 @@ package step_definitions.EditBubbleChat;
 import CreateNewChatTemplate.CreateNewChatTemplatePage;
 import EditBubbleChat.EditBubbleChatPage;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import step_definitions.Hooks;
 
@@ -63,5 +65,19 @@ public class EditBubbleChatStep {
         editBubbleChatPage.setClearTemplateName();
         Thread.sleep(2000);
         editBubbleChatPage.setEditTemplateName(tName);
+    }
+
+    @And("User click delete bubble chat button")
+    public void userClickDeleteBubbleChatButton() throws InterruptedException {
+        EditBubbleChatPage editBubbleChatPage = new EditBubbleChatPage(webDriver);
+        Thread.sleep(2000);
+        editBubbleChatPage.clickDeleteBubbleChatButton();
+    }
+
+    @Then("Pop up error message will appear")
+    public void popUpErrorMessageWillAppear() throws InterruptedException {
+        EditBubbleChatPage editBubbleChatPage = new EditBubbleChatPage(webDriver);
+        Thread.sleep(2000);
+        Assert.assertTrue(editBubbleChatPage.verErrorMessageBubbleChatNull());
     }
 }

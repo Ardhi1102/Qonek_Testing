@@ -79,4 +79,5 @@ public class CreateNewChatTemplateStep {
         Thread.sleep(2000);
         createNewChatTemplatePage.setUploadImageChat("imageTest.jpg");
     }
+    
 }

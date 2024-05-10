@@ -41,13 +41,6 @@ public class CreateNewChatTemplatePage {
     public void setChatText(String cText){
         chatText.sendKeys(cText);
     }
-//update 10052024
-    @FindBy(xpath = "//p[@class='text']")
-    private WebElement previewText;
-    public String setPreviewText(){
-        return previewText.getText();
-    }
-
     @FindBy(xpath = "//button[@id='addnewtemplate_buble_btn_createtemplate']")
     private WebElement createTemplateButton;
     public void clickCreateTemplateButton(){
