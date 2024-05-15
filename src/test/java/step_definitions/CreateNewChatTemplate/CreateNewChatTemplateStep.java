@@ -60,8 +60,9 @@ public class CreateNewChatTemplateStep {
     }
 
     @And("User click on Add bubble chat")
-    public void userClickOnAddBubbleChat() {
+    public void userClickOnAddBubbleChat() throws InterruptedException {
         CreateNewChatTemplatePage createNewChatTemplatePage = new CreateNewChatTemplatePage(webDriver);
+        Thread.sleep(2000);
         createNewChatTemplatePage.clickAddBubbleButton();
     }
 
