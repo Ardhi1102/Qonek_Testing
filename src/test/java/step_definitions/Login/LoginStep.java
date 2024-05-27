@@ -19,15 +19,15 @@ public class LoginStep {
 
     @Given("User allready login with valid {string} and {string}")
     public void userAllreadyOnHomePage(String userId, String password) throws InterruptedException {
-        Thread.sleep(6000);
+        Thread.sleep(10000);
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertTrue(loginPage.verLoginPage());
         loginPage.setUserId(userId);
         loginPage.setPassword(password);
         loginPage.clickBtnLogin();
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         Assert.assertTrue(loginPage.verHomePage());
-        Thread.sleep(4000);
+        Thread.sleep(5000);
     }
 
     @Then("User allready on HomePage")
